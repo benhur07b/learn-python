@@ -24,7 +24,7 @@ project:
         - file: before-you-begin/06-notebooks.md
     - title: Essentials
       children:
-        - file: essentials/00_about.md
+        - file: essentials/00-about.md
         - file: essentials/01_getting_started.ipynb
         - file: essentials/02_variables_data_types_scope.ipynb
         - file: essentials/03_data_structures.ipynb
