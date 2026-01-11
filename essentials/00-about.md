@@ -18,17 +18,15 @@ Our instructor-led courses include **dedicated time for mentoring and project wo
 Our instructor-led training courses cover the following:
 - Environment and package management
 - Variables, data types, and scope
-- Libraries and modules
-- Functions
-- Notebooks
-- Flow control (loops and conditionals)
-- Errors and exceptions
-- File handling
 - Data structures
+- Strings and ranges
+- Flow control (loops and conditionals)
 - Iterations and comprehensions
-- Strings and String Operations
-- Lambda, map, reduce, filter functions
-- Basic visualization
+- Functions, classes, and objects
+- User inputs and file handling
+- Errors and exceptions
+- Lambda, map, and filter functions
+- Basic visualizations
 
 ## Certification and support
 ```{tip}
