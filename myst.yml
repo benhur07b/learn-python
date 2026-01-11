@@ -36,6 +36,7 @@ project:
         - file: essentials/09_errors_and_exceptions.ipynb
         - file: essentials/10_lambda_map_filter.ipynb
         - file: essentials/11_basic_visualizations.ipynb
+        - file: essentials/99_exercises.ipynb
     
 site:
   title: Learn Python with BNHR
