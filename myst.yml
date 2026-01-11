@@ -1,9 +1,9 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  id: ed9f77e0-57d6-47cd-9944-8945a74aab24
-  title: Learn Python with BNHR
-  description: Build a foundation for Python excellence!
+  id: ed9f77e0-57d6-47cd-9944-8945a74aab24e!
+  # title: Learn Python with BNHR
+  # description: Build a foundation for Python excellenc
   # keywords: []
   # authors: []
   # github:
@@ -35,6 +35,8 @@ project:
         - file: essentials/11_basic_visualizations.ipynb
     
 site:
+  title: Learn Python with BNHR
+  description: Build a foundation for Python excellenc
   template: book-theme
   options:
     # favicon: favicon.ico
