@@ -1,0 +1,5 @@
+# Data from NCR (2020)
+NCR|   Barangay 143 | 1401
+NCR|Barangay 144| 880
+   NCR| Barangay 145| 1029
+# End of Report
