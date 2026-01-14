@@ -3,5 +3,6 @@ _build
 
 .ipynb_checkpoints/
 
+03-arrays-and-dataframes/solutions/
 03-arrays-and-dataframes/solutions/*
 03-arrays-and-dataframes/__marimo__/*
