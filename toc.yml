@@ -1,8 +1,8 @@
 version: 1
 project:
   toc:
-    - file: root.md
-      title: Learn Python with BNHR
+    - title: Learn Python with BNHR
+      file: index.md
     - title: Before You Begin
       children:
         - file: before-you-begin/00-about.md
