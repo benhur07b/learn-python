@@ -1,0 +1,281 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.19.2"
+  },
+  "cells": [
+    {
+      "id": "MJUe",
+      "code_hash": "0160c3cff5cd319df080be1a7db4d4c6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"fertilizer-use-and-crop-response-analysis\">Fertilizer Use and Crop Response Analysis</h1>\n<span class=\"paragraph\">In this exercise, you will analyze farm-level data to understand how efficiently\nfertilizer is converted into crop production.</span>\n<span class=\"paragraph\">You will practice:</span>\n<ul>\n<li>Python basics</li>\n<li>NumPy</li>\n<li>Pandas</li>\n<li>Loops</li>\n<li>Groupby, filtering, lambda functions</li>\n<li>Basic data visualization</li>\n</ul>\n<span class=\"paragraph\">This is an <strong>instructional exercise</strong>. Focus on clarity, not complexity.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "a74f150573c88a21a640854d7c6a9f58",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"dataset-description\">Dataset Description</h2>\n<span class=\"paragraph\">The agricultural extension office collected the following information:</span>\n<ul>\n<li><strong>Farm_ID</strong> \u2013 Unique farm identifier</li>\n<li><strong>Crop</strong> \u2013 Crop planted</li>\n<li><strong>Fertilizer_kg</strong> \u2013 Amount of fertilizer applied (kg)</li>\n<li><strong>Production_tons</strong> \u2013 Total crop production (tons)</li>\n</ul>\n<span class=\"paragraph\">The dataset below represents <strong>one planting season</strong>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "23536c17715aa5526774d79899c6057f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-1-data-exploration\">Task 1: Data Exploration</h2>\n<ol>\n<li>Display the <strong>first 5 rows</strong> of the dataset.</li>\n<li>Display the <strong>data types</strong> of each column.</li>\n<li>Display <strong>summary statistics</strong> for numerical columns.</li>\n</ol>\n<span class=\"paragraph\">This step helps you understand the structure of the data.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "484d086fa93a0c2063cdbf46eb845e11",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-2-fertilizer-efficiency-index-fei\">Task 2: Fertilizer Efficiency Index (FEI)</h2>\n<span class=\"paragraph\">Define the <strong>Fertilizer Efficiency Index (FEI)</strong> as:</span>\n<span class=\"paragraph\">FEI = Production (tons) \u00f7 Fertilizer applied (kg)</span>\n<h3 id=\"instructions\">Instructions:</h3>\n<ol>\n<li>Create a new column called <strong>FEI</strong></li>\n<li>Round the FEI values to <strong>3 decimal places</strong></li>\n</ol>\n<span class=\"paragraph\">FEI represents how efficiently fertilizer is converted into production.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "1dfa31da51c799332f475aa949ea92a7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-3-identifying-inefficient-fertilizer-use\">Task 3: Identifying Inefficient Fertilizer Use</h2>\n<span class=\"paragraph\">A farm is considered <strong>inefficient</strong> if:</span>\n<span class=\"paragraph\">FEI &lt; 0.07</span>\n<h3 id=\"instructions\">Instructions:</h3>\n<ol>\n<li>Filter farms with FEI less than 0.07</li>\n<li>\n<span class=\"paragraph\">Display only the following columns:</span>\n<ul>\n<li>Farm_ID</li>\n<li>Crop</li>\n<li>Fertilizer_kg</li>\n<li>FEI\n These farms may require fertilizer optimization or soil testing.</li>\n</ul>\n</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "a4aec20ffb4c5853baf89b01c1f95685",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-4-average-fertilizer-efficiency-by-crop\">Task 4: Average Fertilizer Efficiency by Crop</h2>\n<h3 id=\"instructions\">Instructions:</h3>\n<ol>\n<li>Compute the <strong>average FEI</strong> for each crop.</li>\n<li>Sort the results from <strong>highest to lowest</strong>.</li>\n</ol>\n<span class=\"paragraph\">This shows which crops respond best to fertilizer application.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "81060df2b366e06c84dacbc52bbbebc7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-5-advisory-messages-using-loops\">Task 5: Advisory Messages Using Loops</h2>\n<span class=\"paragraph\">Using the <strong>average FEI per crop</strong>, print advisory messages:</span>\n<ul>\n<li><strong>High efficiency</strong>: FEI \u2265 0.10</li>\n<li><strong>Moderate efficiency</strong>: 0.07\u20130.099</li>\n<li><strong>Low efficiency</strong>: FEI &lt; 0.07</li>\n</ul>\n<span class=\"paragraph\">Use a <strong>for loop</strong> and conditional statements.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "aa73ec83b8f23f2014c4c55c4c732be5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-6-efficiency-classification-using-lambda\">Task 6: Efficiency Classification Using Lambda</h2>\n<h3 id=\"instructions\">Instructions:</h3>\n<ol>\n<li>Create a new column called <strong>Efficiency_Class</strong></li>\n<li>\n<span class=\"paragraph\">Use a <strong>lambda function</strong>:</span>\n<ul>\n<li>\"Efficient\" if FEI \u2265 0.08</li>\n<li>\"Inefficient\" otherwise</li>\n</ul>\n</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "dc3abccdffe79cdf437dd66006906400",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"task-7-data-visualization\">Task 7: Data Visualization</h2>\n<h3 id=\"a-bar-chart\">A. Bar Chart</h3>\n<span class=\"paragraph\">Create a <strong>bar chart</strong> showing the average FEI per crop.</span>\n<h3 id=\"b-scatter-plot\">B. Scatter Plot</h3>\n<span class=\"paragraph\">Create a <strong>scatter plot</strong> with:</span>\n<ul>\n<li>x-axis: Fertilizer_kg</li>\n<li>y-axis: Production_tons</li>\n<li>Color by Crop</li>\n</ul>\n<span class=\"paragraph\">Label axes and add titles to your plots.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "adfdffbb20a3606efc85e738d92675ca",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"reflection-questions\">Reflection Questions</h2>\n<ol>\n<li>Which crop uses fertilizer most efficiently?</li>\n<li>Does applying more fertilizer always increase production?</li>\n<li>How can this analysis help farmers make better decisions?\n Answer briefly in your own words.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "7897c3deb24fb67b4905d19b11b8eea1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"sample-reflection-answers\">Sample Reflection Answers</h2>\n<ol>\n<li>\n<span class=\"paragraph\"><strong>Which crop uses fertilizer most efficiently?</strong></span>\n<ul>\n<li>Banana (highest average FEI)</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>Does applying more fertilizer always increase production?</strong></span>\n<ul>\n<li>Not necessarily; for example, Corn shows lower FEI with moderate fertilizer usage.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>How can this analysis help farmers make better decisions?</strong></span>\n<ul>\n<li>By identifying crops/farms that are inefficient, farmers can optimize fertilizer use, avoid wastage, and improve productivity.</li>\n</ul>\n</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "eb4a504e5bcaf0b6904b5b405e1ccc8d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "0307bf0a0de63746579b8080bb8146e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='lEQa-0' random-id='cc17f67d-50ed-c1fd-6098-a79ead2ed767'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F001&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:120,&#92;&quot;Production_tons&#92;&quot;:10.0},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F002&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Corn&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:90,&#92;&quot;Production_tons&#92;&quot;:7.2},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F003&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:150,&#92;&quot;Production_tons&#92;&quot;:11.5},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F004&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Banana&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:110,&#92;&quot;Production_tons&#92;&quot;:18.0},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F005&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Corn&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:80,&#92;&quot;Production_tons&#92;&quot;:5.5},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F006&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:140,&#92;&quot;Production_tons&#92;&quot;:8.0}]&quot;' data-total-rows='6' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;Farm_ID&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Crop&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Fertilizer_kg&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Production_tons&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "9b0327548034343523728d5524f3db95",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "  Farm_ID    Crop  Fertilizer_kg  Production_tons\n0    F001    Rice            120             10.0\n1    F002    Corn             90              7.2\n2    F003    Rice            150             11.5\n3    F004  Banana            110             18.0\n4    F005    Corn             80              5.5\n\nData Types:\n Farm_ID             object\nCrop                object\nFertilizer_kg        int64\nProduction_tons    float64\ndtype: object\n\nSummary Statistics:\n        Fertilizer_kg  Production_tons\ncount       6.000000         6.000000\nmean      115.000000        10.033333\nstd        27.386128         4.434712\nmin        80.000000         5.500000\n25%        95.000000         7.400000\n50%       115.000000         9.000000\n75%       135.000000        11.125000\nmax       150.000000        18.000000\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "9231d7e0938b0c160006e21b117e6518",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='1bf78798-efed-b14e-a30c-63ec8462a3e2'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F001&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:120,&#92;&quot;Production_tons&#92;&quot;:10.0,&#92;&quot;FEI&#92;&quot;:0.083},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F002&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Corn&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:90,&#92;&quot;Production_tons&#92;&quot;:7.2,&#92;&quot;FEI&#92;&quot;:0.08},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F003&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:150,&#92;&quot;Production_tons&#92;&quot;:11.5,&#92;&quot;FEI&#92;&quot;:0.077},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F004&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Banana&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:110,&#92;&quot;Production_tons&#92;&quot;:18.0,&#92;&quot;FEI&#92;&quot;:0.164},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F005&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Corn&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:80,&#92;&quot;Production_tons&#92;&quot;:5.5,&#92;&quot;FEI&#92;&quot;:0.069},{&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F006&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:140,&#92;&quot;Production_tons&#92;&quot;:8.0,&#92;&quot;FEI&#92;&quot;:0.057}]&quot;' data-total-rows='6' data-total-columns='5' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;Farm_ID&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Crop&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Fertilizer_kg&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Production_tons&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;FEI&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "083034f6f17cc563747a32e23b456109",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Kclp-0' random-id='9d4c9172-f7f4-d18f-277b-a34110a53e7f'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;&#92;&quot;:4,&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F005&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Corn&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:80,&#92;&quot;FEI&#92;&quot;:0.069},{&#92;&quot;&#92;&quot;:5,&#92;&quot;Farm_ID&#92;&quot;:&#92;&quot;F006&#92;&quot;,&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;Fertilizer_kg&#92;&quot;:140,&#92;&quot;FEI&#92;&quot;:0.057}]&quot;' data-total-rows='2' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;Farm_ID&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Crop&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Fertilizer_kg&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;FEI&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[[&quot;&quot;,[&quot;integer&quot;,&quot;int64&quot;]]]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "91f66d9dea93ec4c3e4bf482926a43a5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Hstk-0' random-id='12240610-d136-05d6-5d75-a8e68db4c8e1'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;Crop&#92;&quot;:&#92;&quot;Banana&#92;&quot;,&#92;&quot;FEI&#92;&quot;:0.164},{&#92;&quot;Crop&#92;&quot;:&#92;&quot;Corn&#92;&quot;,&#92;&quot;FEI&#92;&quot;:0.075},{&#92;&quot;Crop&#92;&quot;:&#92;&quot;Rice&#92;&quot;,&#92;&quot;FEI&#92;&quot;:0.072}]&quot;' data-total-rows='3' data-total-columns='1' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;FEI&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[[&quot;Crop&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "52c8c0264c8a323c42a23acf863e8003",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Banana \u2013 High efficiency (FEI: 0.164)\nCorn \u2013 Moderate efficiency (FEI: 0.075)\nRice \u2013 Moderate efficiency (FEI: 0.072)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "9bcf62b7b76ccd92fdd815ecc508c6d7",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "4196e07a45301cce5e27f5ea0edc9510",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.19.2"
+  },
+  "cells": [
+    {
+      "id": "MJUe",
+      "code_hash": "df318cbf3c17b3fd89c02f4f7b9cad67",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"exercise-farm-typology-and-survey-prioritization\">Exercise: Farm Typology and Survey Prioritization</h1>\n<h2 id=\"context\">Context</h2>\n<span class=\"paragraph\">Agricultural survey analysis goes beyond computing simple totals or averages.\nAnalysts often derive indicators, classify farms, detect unusual observations, and combine multiple signals to support decision-making.</span>\n<span class=\"paragraph\">In this exercise, you will analyze farm survey data to help a statistical agency prioritize farms for <strong>validation, follow-up, or deeper analysis</strong>.</span>\n<span class=\"paragraph\">This is a <strong>multi-part, progressive exercise</strong>.\nEach part builds on the outputs of the previous tasks.</span>\n<span class=\"paragraph\">You may solve each task using <strong>either Pandas or Polars</strong>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "e4155e679834ecee6a2992e147c0ab8a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"dataset\">Dataset</h2>\n<span class=\"paragraph\">You are given a farm-level dataset with at least the following columns:</span>\n<ul>\n<li><code>Farm_ID</code></li>\n<li><code>Crop</code></li>\n<li><code>Yield</code></li>\n<li><code>Farm_Area</code></li>\n<li><code>Latitude</code></li>\n<li><code>Longitude</code></li>\n<li><code>Distance</code> (a derived spatial metric)</li>\n</ul>\n<span class=\"paragraph\">Assume the dataset has already been loaded as:</span>\n<ul>\n<li><code>df_pd</code> (Pandas), or</li>\n<li><code>df_pl</code> (Polars)</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "fc9ec00ec15bfbb0339461086f69a4a3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"mini-problem-1-deriving-productivity-indicators\">Mini-Problem 1: Deriving Productivity Indicators</h2>\n<h3 id=\"objective\">Objective</h3>\n<span class=\"paragraph\">Create new variables that better represent farm productivity and can be used for further analysis.</span>\n<h3 id=\"tasks\">Tasks</h3>\n<ol>\n<li>\n<span class=\"paragraph\">Create a productivity indicator that accounts for both output and land size.</span>\n<ul>\n<li><em>(Yield_per_Area = Yield / Farm_Area)</em></li>\n</ul>\n</li>\n<li>Compute a reference value that represents the typical yield across all farms.</li>\n<li>Using this reference value, flag farms that perform better than the typical farm.</li>\n<li>Inspect the newly created columns to ensure they make sense.</li>\n</ol>\n<h3 id=\"expected-outcome\">Expected Outcome</h3>\n<span class=\"paragraph\">The dataset now contains derived indicators that describe <strong>relative productivity</strong>, not just raw production.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "554af26c5ae8852fe5ece968f17a07dd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"mini-problem-2-developing-farm-typologies\">Mini-Problem 2: Developing Farm Typologies</h2>\n<h3 id=\"objective\">Objective</h3>\n<span class=\"paragraph\">Classify farms into meaningful types using both productivity and land size information.</span>\n<h3 id=\"tasks\">Tasks</h3>\n<ol>\n<li>\n<span class=\"paragraph\">Identify suitable reference values that describe:</span>\n<ul>\n<li>Typical yield</li>\n<li>Typical farm size</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Use these references to group farms into distinct categories that reflect:</span>\n<ul>\n<li>Differences in yield performance</li>\n<li>Differences in land area</li>\n</ul>\n</li>\n<li>Assign each farm to exactly one category.</li>\n<li>Review how farms are distributed across the resulting types.</li>\n</ol>\n<h3 id=\"expected-outcome\">Expected Outcome</h3>\n<span class=\"paragraph\">Farms are transformed from individual records into members of interpretable groups.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "15b887c1faeeaa8a76fa7c2408df6152",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"mini-problem-3-identifying-unusual-farms\">Mini-Problem 3: Identifying Unusual Farms</h2>\n<h3 id=\"objective\">Objective</h3>\n<span class=\"paragraph\">Detect farms that differ strongly from common productivity patterns.</span>\n<h3 id=\"tasks\">Tasks</h3>\n<ol>\n<li>Use the productivity indicator created earlier to define what \u201ctypical\u201d performance looks like.</li>\n<li>\n<span class=\"paragraph\">Create a metric that measures how far each farm deviates from this typical performance.</span>\n<ul>\n<li><em>(Outlier_Score = absolute difference from the reference value)</em></li>\n</ul>\n</li>\n<li>Rank farms by this deviation measure.</li>\n<li>Examine the farms with the largest deviations.</li>\n</ol>\n<h3 id=\"expected-outcome\">Expected Outcome</h3>\n<span class=\"paragraph\">You identify farms that may represent:</span>\n<ul>\n<li>Exceptional performance</li>\n<li>Data quality issues</li>\n<li>Cases requiring validation</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "ef46c1b76a554ef3148b5e13b92de036",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"mini-problem-4-evaluating-performance-within-crop-groups\">Mini-Problem 4: Evaluating Performance Within Crop Groups</h2>\n<h3 id=\"objective\">Objective</h3>\n<span class=\"paragraph\">Assess farm performance relative to other farms growing the same crop.</span>\n<h3 id=\"tasks\">Tasks</h3>\n<ol>\n<li>Group farms by crop type.</li>\n<li>Compute a crop-level benchmark for productivity.</li>\n<li>\n<span class=\"paragraph\">Compare each farm\u2019s productivity against its crop benchmark.</span>\n<ul>\n<li><em>(Relative_Performance = farm productivity / crop benchmark)</em></li>\n</ul>\n</li>\n<li>Interpret which farms perform above or below expectations for their crop.</li>\n</ol>\n<h3 id=\"expected-outcome\">Expected Outcome</h3>\n<span class=\"paragraph\">Farm performance is interpreted <strong>in context</strong>, accounting for crop-specific differences.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "44d0f20f237846e5f1e8dae67daa565a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"mini-problem-5-constructing-a-survey-priority-index-capstone\">Mini-Problem 5: Constructing a Survey Priority Index (Capstone)</h2>\n<h3 id=\"objective\">Objective</h3>\n<span class=\"paragraph\">Combine multiple indicators into a single metric that can guide survey prioritization.</span>\n<h3 id=\"tasks\">Tasks</h3>\n<ol>\n<li>\n<span class=\"paragraph\">Scale yield values so they are comparable across farms.</span>\n<ul>\n<li><em>(Normalized_Yield = Yield / maximum Yield)</em></li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Combine multiple indicators into a single index:</span>\n<ul>\n<li>Productivity relative to crop peers</li>\n<li>Degree of deviation from typical productivity</li>\n<li>Overall yield level</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Create a composite score using a weighted combination.</span>\n<ul>\n<li>*(Survey_Priority_Index = 0.4 \u00d7 Relative_Performance</li>\n<li>0.4 \u00d7 Outlier_Score</li>\n<li>0.2 \u00d7 Normalized_Yield)*</li>\n</ul>\n</li>\n<li>Rank farms by this index and identify the top candidates for follow-up.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "88b32deb9a9ae353556a715079ec6976",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}

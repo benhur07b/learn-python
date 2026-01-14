@@ -32,3 +32,8 @@ project:
         - file: arrays-and-dataframes/00-about.md
         - file: arrays-and-dataframes/01_arrays.ipynb
         - file: arrays-and-dataframes/02_dataframes.ipynb
+    - title: Intro to AI and ML
+      children:
+        - file: intro-to-ai-ml/97-knowledge-check.ipynb
+        - file: intro-to-ai-ml/98-demo-01-decision-tree-water-detection.ipynb
+        - file: intro-to-ai-ml/98-demo-02-random-forest-land-cover-classification.ipynb

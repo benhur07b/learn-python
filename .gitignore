@@ -2,3 +2,5 @@
 _build
 
 .ipynb_checkpoints/
+
+03-arrays-and-dataframes/solutions/*

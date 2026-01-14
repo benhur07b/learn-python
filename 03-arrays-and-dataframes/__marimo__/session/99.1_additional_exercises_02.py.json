@@ -1,0 +1,218 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.19.2"
+  },
+  "cells": [
+    {
+      "id": "MJUe",
+      "code_hash": "b5ce8256ad0261c48c18a9b4d73b56d4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"labor-productivity-analysis\">Labor Productivity Analysis</h1>\n<span class=\"paragraph\">This notebook will show examples to:</span>\n<ul>\n<li>Compute labor productivity</li>\n<li>Filter and classify farms</li>\n<li>Loop through averages</li>\n<li>Use lambda functions</li>\n<li>Visualize data</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "698b03d4e59fa577d19d63c51a996cd5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"dataset-description\">Dataset Description</h2>\n<span class=\"paragraph\">The dataset collected from farms includes:</span>\n<ul>\n<li>Farm_ID \u2013 Unique farm identifier</li>\n<li>Crop \u2013 Crop planted</li>\n<li>Labor_days \u2013 Total labor days spent for the crop</li>\n<li>Production_tons \u2013 Total production (tons)</li>\n</ul>\n<span class=\"paragraph\">We will calculate labor productivity as production per labor day.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "87c4a5563c9fc51f4ca90ae96f5376c2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-1-data-exploration\">Task 1: Data Exploration</h3>\n<ol>\n<li>Display the first 5 rows of the dataset.</li>\n<li>Display the data types of each column.</li>\n<li>Display summary statistics for numerical columns.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "e97b278c17e1e4aa0d97f1c5d6b8d8c2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-2-labor-productivity\">Task 2: Labor Productivity</h3>\n<ol>\n<li>Compute <strong>Labor Productivity</strong> = Production_tons \u00f7 Labor_days</li>\n<li>Create a new column <code>Labor_Productivity</code> rounded to <strong>3 decimal places</strong></li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "0aa9af4f8cac4ca1baa3b562c1156924",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-3-identify-low-productivity-farms\">Task 3: Identify Low Productivity Farms</h3>\n<ol>\n<li>Filter farms with Labor_Productivity &lt; 0.25</li>\n<li>\n<span class=\"paragraph\">Display the following columns:</span>\n<ul>\n<li>Farm_ID</li>\n<li>Crop</li>\n<li>Labor_days</li>\n<li>Production_tons</li>\n<li>Labor_Productivity</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Add a short interpretation:</span>\n<blockquote>\n<span class=\"paragraph\">\"These farms may need improved labor planning or mechanization.\"</span>\n</blockquote>\n</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "2967faf94dc540da8ce6c9cce77ac5e2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-4-average-labor-productivity-per-crop\">Task 4: Average Labor Productivity per Crop</h3>\n<ol>\n<li>Compute the <strong>average Labor_Productivity</strong> for each crop using <code>groupby</code>.</li>\n<li>Sort from <strong>highest to lowest productivity</strong>.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "797b1640563e7ab3621785772f315162",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-5-advisory-messages-using-loops\">Task 5: Advisory Messages Using Loops</h3>\n<span class=\"paragraph\">Using the average Labor_Productivity per crop, print advisory messages:</span>\n<ul>\n<li><strong>High productivity</strong>: \u2265 0.5 tons/day</li>\n<li><strong>Moderate productivity</strong>: 0.3 \u2013 0.49 tons/day</li>\n<li><strong>Low productivity</strong>: &lt; 0.3 tons/day</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "412c2f1d16392a9a1447cec128a64581",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-6-productivity-classification-using-lambda\">Task 6: Productivity Classification Using Lambda</h3>\n<ol>\n<li>Create a new column <code>Productivity_Class</code></li>\n<li>\n<span class=\"paragraph\">Use a lambda function:</span>\n<ul>\n<li>\"High\" if Labor_Productivity \u2265 0.4</li>\n<li>\"Low\" otherwise</li>\n</ul>\n</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "c02d1ed67019055a1fc944ca997418b0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"task-7-data-visualization\">Task 7: Data Visualization</h3>\n<span class=\"paragraph\">A. <strong>Bar Chart</strong> \u2013 Average Labor_Productivity per crop\nB. <strong>Scatter Plot</strong> \u2013 Labor_days vs Production_tons, color by Crop</span>\n<span class=\"paragraph\">Add axes labels and titles.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "f9018fca0c22f4a3a4e468b96c688271",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"reflection-questions\">Reflection Questions</h3>\n<ol>\n<li>Which crop has the highest labor productivity?</li>\n<li>Does increasing labor always lead to higher production?</li>\n<li>How can this analysis help farmers optimize labor?</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "177d4b4b5a106e17af0e96a757dc0ce6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"write-your-answers-here\">Write your answers here!</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "eb4a504e5bcaf0b6904b5b405e1ccc8d",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "6c83892d0324314494cde8b5ca5ccab5",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "1a827ba821767eae7d5d3f19ef05cb37",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
