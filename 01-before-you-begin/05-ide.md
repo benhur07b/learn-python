@@ -24,4 +24,4 @@ Popular options for Python include:
 - Spyder (https://www.spyder-ide.org/)
     - Python IDE for scientists and data analyst
 
-## What about [Notebooks](../notebooks)?
+## What about Notebooks?
