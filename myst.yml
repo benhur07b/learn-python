@@ -42,6 +42,6 @@ site:
   template: book-theme
   options:
     folders: true
-  # options:
-    # favicon: favicon.ico
-    # logo: site_logo.png
+    favicon: favicon.ico
+    logo: bnhr-2024-fordarkbg-main.png
+    logo_text: Learn Python with BNHR
