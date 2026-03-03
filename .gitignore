@@ -8,3 +8,5 @@ _build
 03-arrays-and-dataframes/tests/
 03-arrays-and-dataframes/tests/*
 03-arrays-and-dataframes/__marimo__/*
+
+drafts/
