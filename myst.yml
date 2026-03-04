@@ -10,6 +10,13 @@ project:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   extends:
     - toc.yml
+  exclude:
+    - README.md
+    - .github/**
+    - .gitignore
+    - drafts
+    - 05-geopython-+-ML/02-GeoPython/solutions
+
     
 site:
   title: Learn Python with BNHR

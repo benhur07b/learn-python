@@ -12,3 +12,9 @@ _build
 **/__marimo__/*
 
 drafts/
+
+**/drafts
+
+**/data
+
+**/solutions
